@@ -4,6 +4,6 @@ services:
     ports:
       - "1882:1882"
       - "1883:1883"
-      - "8080:8080"
+      - "1880:1880"
     volumes:
       - ./mqtt-broker-config.yaml:/config.yaml
