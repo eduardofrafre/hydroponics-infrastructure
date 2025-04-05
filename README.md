@@ -1,6 +1,6 @@
 # Hydroponics Infrastructure
 
-Designed to set up and automate the **Hydroponics projects from the** project applications.
+Designed to set up and automate the **Integrated Hydroponics Farm System** project applications.
 
 ## Authors
 
