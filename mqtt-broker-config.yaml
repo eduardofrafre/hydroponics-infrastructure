@@ -1,0 +1,20 @@
+listeners:
+  - type: "tcp"
+    id: "tcp1"
+    address: ":1883"
+  - type: "ws"
+    id: "ws1"
+    address: ":1882"
+  - type: "sysinfo"
+    id: "stats"
+    address: ":1880"
+hooks:
+  auth:
+    allow_all: true
+options:
+  inline_client: true
+# tls:
+#   cert_file: /etc/ssl/certs/cert.pem
+#   priv_key: /etc/ssl/certs/key.pem
+#   cacert_file: /etc/ssl/certs/cacert.pem
+

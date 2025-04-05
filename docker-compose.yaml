@@ -1,0 +1,9 @@
+services:
+  mqtt-broker:
+    image: mochimqtt/server
+    ports:
+      - "1882:1882"
+      - "1883:1883"
+      - "8080:8080"
+    volumes:
+      - ./mqtt-broker-config.yaml:/config.yaml
