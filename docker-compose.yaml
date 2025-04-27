@@ -7,3 +7,12 @@ services:
       - "1880:1880"
     volumes:
       - ./mqtt-broker-config.yaml:/config.yaml
+    restart: unless-stopped
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - /mnt/hydroponics:/data/db
+    restart: unless-stopped
