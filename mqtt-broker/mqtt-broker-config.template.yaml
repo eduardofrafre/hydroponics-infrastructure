@@ -29,12 +29,12 @@ hooks:
   #     address: "localhost:6379"
   #     database: 1
   auth:
-    allow_all: true
-    # ledger:
-    #   auth:
-    #     - username: peach
-    #       password: password1
-    #       allow: true
+    # allow_all: true
+    ledger:
+      auth:
+        - username: {{USERNAME}}
+          password: {{PASSWORD}}
+          allow: true
     #   acl:
     #     - remote: 127.0.0.1:*
     #     - username: melon
