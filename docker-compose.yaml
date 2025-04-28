@@ -20,5 +20,5 @@ services:
     env_file:
       - .env
     volumes:
-      - /mnt/hydroponics:/data/db
+      - /mnt/sunder/hydroponics:/data/db
     restart: unless-stopped
