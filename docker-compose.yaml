@@ -5,20 +5,20 @@ services:
       - "1882:1882"
       - "1883:1883"
       - "1880:1880"
-    env_file:
-      - .env
+    # env_file:
+    #   - .env
     volumes:
-      - ./mqtt-broker/mqtt-broker-config.template.yaml:/mqtt-broker-config.template.yaml
-      - ./mqtt-broker/mqtt-broker.entrypoint.sh:/mqtt-broker.entrypoint.sh
-    entrypoint: ["sh", "/mqtt-broker.entrypoint.sh"]
+      - ./mqtt-broker/mqtt-broker-config.template.yaml:/config.yaml
+      # - ./mqtt-broker/mqtt-broker.entrypoint.sh:/mqtt-broker.entrypoint.sh
+    # entrypoint: ["sh", "/mqtt-broker.entrypoint.sh"]
     restart: unless-stopped
   mongodb:
-    image: mongo:latest
+    image: espressive/mongo-arm64
     container_name: mongodb
     ports:
       - "27017:27017"
-    env_file:
-      - .env
+    # env_file:
+    #   - .env
     volumes:
       - /mnt/sunder/hydroponics:/data/db
     restart: unless-stopped
