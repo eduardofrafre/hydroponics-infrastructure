@@ -26,6 +26,8 @@ services:
   mqtt-persistence-service:
     build:
       context: ../hydroponics-mqtt-persistence-service
+    ports:
+      - "8080:8080"
     env_file:
       - ../hydroponics-mqtt-persistence-service/.env
     depends_on:
