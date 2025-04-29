@@ -12,6 +12,7 @@ services:
       # - ./mqtt-broker/mqtt-broker.entrypoint.sh:/mqtt-broker.entrypoint.sh
     # entrypoint: ["sh", "/mqtt-broker.entrypoint.sh"]
     restart: unless-stopped
+
   mongodb:
     image: arm64v8/mongo:4.4.18
     ports:
@@ -20,4 +21,14 @@ services:
     #   - .env
     volumes:
       - /mnt/sunder/hydroponics/data/mongodb:/data/db
+    restart: unless-stopped
+
+  mqtt-persistence-service:
+    build:
+      context: ../hydroponics-mqtt-persistence-service
+    env_file:
+      - ../hydroponics-mqtt-persistence-service/.env
+    depends_on:
+      - mongodb
+      - mqtt-broker
     restart: unless-stopped
