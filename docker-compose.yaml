@@ -23,13 +23,13 @@ services:
       - /mnt/sunder/hydroponics/data/mongodb:/data/db
     restart: unless-stopped
 
-  mqtt-persistence-service:
+  mqtt-to-mongodb-service:
     build:
-      context: ../hydroponics-mqtt-persistence-service
+      context: ../hydroponics-mqtt-to-mongodb-service
     ports:
       - "8080:8080"
     env_file:
-      - ../hydroponics-mqtt-persistence-service/.env
+      - ../hydroponics-mqtt-to-mongodb-service/.env
     depends_on:
       - mongodb
       - mqtt-broker
