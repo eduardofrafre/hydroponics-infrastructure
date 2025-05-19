@@ -23,6 +23,16 @@ services:
       - /mnt/sunder/hydroponics/data/mongodb:/data/db
     restart: unless-stopped
 
+  postgres:
+    image: arm64v8/postgres
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    volumes:
+      - /mnt/sunder/hydroponics/data/postgres:/data/postgres
+    restart: unless-stopped
+
   mqtt-to-mongodb-service:
     build:
       context: ../hydroponics-mqtt-to-mongodb-service
